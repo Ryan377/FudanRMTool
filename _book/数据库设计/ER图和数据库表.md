@@ -8,7 +8,9 @@
 
 ## ER图
 
-![数据库ER图](https://gitee.com/freemansonary/markdown-pic-bed/raw/master/Typora/20210529222745.png)
+下图是数据库ER图（省略了属性）
+
+![数据库ER图](https://gitee.com/freemansonary/markdown-pic-bed/raw/master/Typora/20210531155705.png)
 
 
 
@@ -33,7 +35,7 @@
 | -------- | ------------ | ----------- | ---- |
 | RoleID   | 角色编号     | varchar(20) | 主键 |
 | RoleName | 角色名称     | varchar(20) |      |
-| RoleNote | 角色信息描述 | varchar(20) |      |
+| RoleNote | 角色信息描述 | text        |      |
 
 用户-角色关系表UserRole：
 
@@ -53,7 +55,7 @@
 | -------------- | ------------ | ----------- | ---- |
 | PermissionID   | 权限编号     | varchar(20) | 主键 |
 | PermissionName | 权限名称     | varchar(20) |      |
-| PermissionNote | 权限信息描述 | varchar(20) |      |
+| PermissionNote | 权限信息描述 | text        |      |
 
 角色·权限关系表RolePermission：
 
@@ -67,6 +69,8 @@
 
 项目表Project：
 
+项目是最大的管理单元
+
 | 字段名      | 解释         | 类型        | 备注 |
 | ----------- | ------------ | ----------- | ---- |
 | ProjectID   | 项目编号     | varchar(20) | 主键 |
@@ -74,7 +78,19 @@
 | ProjectNote | 项目描述     | text        | 外键 |
 | ProjectTime | 项目创建时间 | datetime    |      |
 
+用户项目表UserProject：
+
+一个用户可以对应多个项目，一个项目可以有多个用户，该表记录项目用户关系
+
+| 字段名        | 解释         | 类型        | 备注 |
+| ------------- | ------------ | ----------- | ---- |
+| UserProjectID | 用户项目编号 | varchar(20) | 主键 |
+| UserID        | 用户编号     | varchar(20) | 外键 |
+| ProjectID     | 项目编号     | varchar(20) | 外键 |
+
 模块表Module：
+
+模块是项目下一级的管理单元，一个项目可以有多个模块
 
 | 字段名     | 解释         | 类型        | 备注 |
 | ---------- | ------------ | ----------- | ---- |
@@ -84,19 +100,51 @@
 | ModuleNote | 模块描述     | text        |      |
 | ModuleTime | 模块创建时间 | datetime    |      |
 
-文档表Doc：
+需求文档表Doc：
 
-| 字段名   | 解释         | 类型        | 备注 |
-| -------- | ------------ | ----------- | ---- |
-| DocID    | 文档编号     | varchar(20) | 主键 |
-| UserID   | 创建者编号   | varchar(20) | 外键 |
-| ModuleID | 模块编号     | varchar(20) | 外键 |
-| DocNote  | 文档描述     | text        |      |
-| DocTime  | 文档创建时间 | datetime    |      |
+一个模块内可以有多个需求文档，需求文档支持导入和导出
+
+| 字段名   | 解释            | 类型        | 备注 |
+| -------- | --------------- | ----------- | ---- |
+| DocID    | 文档编号        | varchar(20) | 主键 |
+| UserID   | 创建/导入者编号 | varchar(20) | 外键 |
+| ModuleID | 模块编号        | varchar(20) | 外键 |
+| DocNote  | 文档描述        | text        |      |
+| DocTime  | 文档创建时间    | datetime    |      |
+
+需求条目表Requirements：
+
+一个需求文档内有多个需求条目
+
+| 字段名           | 解释         | 类型        | 备注 |
+| ---------------- | ------------ | ----------- | ---- |
+| RequirementsID   | 需求条目编号 | varchar(20) | 主键 |
+| DocID            | 文档编号     | varchar(20) | 外键 |
+| RequirementsNote | 需求条目描述 | text        |      |
+
+需求属性表Properties：
+
+一个需求条目可以多种需求属性，支持给一个已有条目添加附加属性
+
+| 字段名            | 解释         | 类型        | 备注 |
+| ----------------- | ------------ | ----------- | ---- |
+| PropertiesID      | 需求属性编号 | varchar(20) | 主键 |
+| RequiredmentsNote | 需求属性描述 | text        |      |
+
+条目属性表RequirementsProperties：
+
+一个需求条目可以有多个需求属性，一个属性对应多个条目，该表记录条目和属性的关系，以及某个条目的某个属性的具体内容
+
+| 字段名                     | 解释         | 类型        | 备注 |
+| -------------------------- | ------------ | ----------- | ---- |
+| RequirementsPropertiesID   | 条目属性编号 | varchar(20) | 主键 |
+| RequirementsID             | 需求条目编号 | varchar(20) | 外键 |
+| PropertiesID               | 需求属性编号 | varchar(20) | 外键 |
+| RequirementsPropertiesNote | 条目属性内容 | text        |      |
 
 评论表Comment：
 
-评论是具体用户针对具体文档做出的评论
+一个用户可以在一个文档内进行评论，该表记录评论信息
 
 | 字段名      | 解释     | 类型        | 备注 |
 | ----------- | -------- | ----------- | ---- |
@@ -108,18 +156,18 @@
 
 更改Change：
 
-更改记录用户对文档的更改
+一个用户可以对文档更改，该表跟踪更改的具体条目的具体属性，保存更改信息
 
-| 字段名     | 解释     | 类型        | 备注 |
-| ---------- | -------- | ----------- | ---- |
-| ChangeID   | 更改编号 | varchar(20) | 主键 |
-| DocID      | 文档编号 | varchar(20) | 外键 |
-| UserID     | 用户编号 | varchar(20) | 外键 |
-| ChangeTime | 更改时间 | datetime    |      |
-| OldNote    | 原内容   | text        |      |
-| NewNote    | 新内容   | text        |      |
+| 字段名                   | 解释         | 类型        | 备注 |
+| ------------------------ | ------------ | ----------- | ---- |
+| ChangeID                 | 更改编号     | varchar(20) | 主键 |
+| RequirementsPropertiesID | 条目属性编号 | varchar(20) | 外键 |
+| UserID                   | 用户编号     | varchar(20) | 外键 |
+| ChangeTime               | 更改时间     | datetime    |      |
+| OldNote                  | 原内容       | text        |      |
+| NewNote                  | 新内容       | text        |      |
 
 
 
-## 数据库初始化示例
+
 
