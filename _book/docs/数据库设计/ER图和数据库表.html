@@ -254,7 +254,8 @@
 <h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
 <p>&#x672C;&#x9879;&#x76EE;&#x91C7;&#x7528;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x3002;</p>
 <h2 id="er&#x56FE;">ER&#x56FE;</h2>
-<p><img src="https://gitee.com/freemansonary/markdown-pic-bed/raw/master/Typora/20210529222745.png" alt="&#x6570;&#x636E;&#x5E93;ER&#x56FE;"></p>
+<p>&#x4E0B;&#x56FE;&#x662F;&#x6570;&#x636E;&#x5E93;ER&#x56FE;&#xFF08;&#x7701;&#x7565;&#x4E86;&#x5C5E;&#x6027;&#xFF09;</p>
+<p><img src="https://gitee.com/freemansonary/markdown-pic-bed/raw/master/Typora/20210531155705.png" alt="&#x6570;&#x636E;&#x5E93;ER&#x56FE;"></p>
 <h2 id="&#x6570;&#x636E;&#x5E93;&#x8868;&#x8BF4;&#x660E;">&#x6570;&#x636E;&#x5E93;&#x8868;&#x8BF4;&#x660E;</h2>
 <p>&#x7528;&#x6237;&#x8868;User&#xFF1A;</p>
 <p>&#x8BB0;&#x5F55;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;</p>
@@ -320,7 +321,7 @@
 <tr>
 <td>RoleNote</td>
 <td>&#x89D2;&#x8272;&#x4FE1;&#x606F;&#x63CF;&#x8FF0;</td>
-<td>varchar(20)</td>
+<td>text</td>
 </tr>
 </tbody>
 </table>
@@ -383,7 +384,7 @@
 <tr>
 <td>PermissionNote</td>
 <td>&#x6743;&#x9650;&#x4FE1;&#x606F;&#x63CF;&#x8FF0;</td>
-<td>varchar(20)</td>
+<td>text</td>
 </tr>
 </tbody>
 </table>
@@ -420,6 +421,7 @@
 </tbody>
 </table>
 <p>&#x9879;&#x76EE;&#x8868;Project&#xFF1A;</p>
+<p>&#x9879;&#x76EE;&#x662F;&#x6700;&#x5927;&#x7684;&#x7BA1;&#x7406;&#x5355;&#x5143;</p>
 <table>
 <thead>
 <tr>
@@ -455,7 +457,40 @@
 </tr>
 </tbody>
 </table>
+<p>&#x7528;&#x6237;&#x9879;&#x76EE;&#x8868;UserProject&#xFF1A;</p>
+<p>&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x9879;&#x76EE;&#xFF0C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x7528;&#x6237;&#xFF0C;&#x8BE5;&#x8868;&#x8BB0;&#x5F55;&#x9879;&#x76EE;&#x7528;&#x6237;&#x5173;&#x7CFB;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5907;&#x6CE8;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UserProjectID</td>
+<td>&#x7528;&#x6237;&#x9879;&#x76EE;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x4E3B;&#x952E;</td>
+</tr>
+<tr>
+<td>UserID</td>
+<td>&#x7528;&#x6237;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x5916;&#x952E;</td>
+</tr>
+<tr>
+<td>ProjectID</td>
+<td>&#x9879;&#x76EE;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x5916;&#x952E;</td>
+</tr>
+</tbody>
+</table>
 <p>&#x6A21;&#x5757;&#x8868;Module&#xFF1A;</p>
+<p>&#x6A21;&#x5757;&#x662F;&#x9879;&#x76EE;&#x4E0B;&#x4E00;&#x7EA7;&#x7684;&#x7BA1;&#x7406;&#x5355;&#x5143;&#xFF0C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x6A21;&#x5757;</p>
 <table>
 <thead>
 <tr>
@@ -497,7 +532,8 @@
 </tr>
 </tbody>
 </table>
-<p>&#x6587;&#x6863;&#x8868;Doc&#xFF1A;</p>
+<p>&#x9700;&#x6C42;&#x6587;&#x6863;&#x8868;Doc&#xFF1A;</p>
+<p>&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x5185;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x9700;&#x6C42;&#x6587;&#x6863;&#xFF0C;&#x9700;&#x6C42;&#x6587;&#x6863;&#x652F;&#x6301;&#x5BFC;&#x5165;&#x548C;&#x5BFC;&#x51FA;</p>
 <table>
 <thead>
 <tr>
@@ -516,7 +552,7 @@
 </tr>
 <tr>
 <td>UserID</td>
-<td>&#x521B;&#x5EFA;&#x8005;&#x7F16;&#x53F7;</td>
+<td>&#x521B;&#x5EFA;/&#x5BFC;&#x5165;&#x8005;&#x7F16;&#x53F7;</td>
 <td>varchar(20)</td>
 <td>&#x5916;&#x952E;</td>
 </tr>
@@ -539,8 +575,101 @@
 </tr>
 </tbody>
 </table>
+<p>&#x9700;&#x6C42;&#x6761;&#x76EE;&#x8868;Requirements&#xFF1A;</p>
+<p>&#x4E00;&#x4E2A;&#x9700;&#x6C42;&#x6587;&#x6863;&#x5185;&#x6709;&#x591A;&#x4E2A;&#x9700;&#x6C42;&#x6761;&#x76EE;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5907;&#x6CE8;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RequirementsID</td>
+<td>&#x9700;&#x6C42;&#x6761;&#x76EE;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x4E3B;&#x952E;</td>
+</tr>
+<tr>
+<td>DocID</td>
+<td>&#x6587;&#x6863;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x5916;&#x952E;</td>
+</tr>
+<tr>
+<td>RequirementsNote</td>
+<td>&#x9700;&#x6C42;&#x6761;&#x76EE;&#x63CF;&#x8FF0;</td>
+<td>text</td>
+</tr>
+</tbody>
+</table>
+<p>&#x9700;&#x6C42;&#x5C5E;&#x6027;&#x8868;Properties&#xFF1A;</p>
+<p>&#x4E00;&#x4E2A;&#x9700;&#x6C42;&#x6761;&#x76EE;&#x53EF;&#x4EE5;&#x591A;&#x79CD;&#x9700;&#x6C42;&#x5C5E;&#x6027;&#xFF0C;&#x652F;&#x6301;&#x7ED9;&#x4E00;&#x4E2A;&#x5DF2;&#x6709;&#x6761;&#x76EE;&#x6DFB;&#x52A0;&#x9644;&#x52A0;&#x5C5E;&#x6027;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5907;&#x6CE8;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PropertiesID</td>
+<td>&#x9700;&#x6C42;&#x5C5E;&#x6027;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x4E3B;&#x952E;</td>
+</tr>
+<tr>
+<td>RequiredmentsNote</td>
+<td>&#x9700;&#x6C42;&#x5C5E;&#x6027;&#x63CF;&#x8FF0;</td>
+<td>text</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6761;&#x76EE;&#x5C5E;&#x6027;&#x8868;RequirementsProperties&#xFF1A;</p>
+<p>&#x4E00;&#x4E2A;&#x9700;&#x6C42;&#x6761;&#x76EE;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x9700;&#x6C42;&#x5C5E;&#x6027;&#xFF0C;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;&#x6761;&#x76EE;&#xFF0C;&#x8BE5;&#x8868;&#x8BB0;&#x5F55;&#x6761;&#x76EE;&#x548C;&#x5C5E;&#x6027;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x4EE5;&#x53CA;&#x67D0;&#x4E2A;&#x6761;&#x76EE;&#x7684;&#x67D0;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x5177;&#x4F53;&#x5185;&#x5BB9;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x89E3;&#x91CA;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5907;&#x6CE8;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RequirementsPropertiesID</td>
+<td>&#x6761;&#x76EE;&#x5C5E;&#x6027;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x4E3B;&#x952E;</td>
+</tr>
+<tr>
+<td>RequirementsID</td>
+<td>&#x9700;&#x6C42;&#x6761;&#x76EE;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x5916;&#x952E;</td>
+</tr>
+<tr>
+<td>PropertiesID</td>
+<td>&#x9700;&#x6C42;&#x5C5E;&#x6027;&#x7F16;&#x53F7;</td>
+<td>varchar(20)</td>
+<td>&#x5916;&#x952E;</td>
+</tr>
+<tr>
+<td>RequirementsPropertiesNote</td>
+<td>&#x6761;&#x76EE;&#x5C5E;&#x6027;&#x5185;&#x5BB9;</td>
+<td>text</td>
+</tr>
+</tbody>
+</table>
 <p>&#x8BC4;&#x8BBA;&#x8868;Comment&#xFF1A;</p>
-<p>&#x8BC4;&#x8BBA;&#x662F;&#x5177;&#x4F53;&#x7528;&#x6237;&#x9488;&#x5BF9;&#x5177;&#x4F53;&#x6587;&#x6863;&#x505A;&#x51FA;&#x7684;&#x8BC4;&#x8BBA;</p>
+<p>&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x5185;&#x8FDB;&#x884C;&#x8BC4;&#x8BBA;&#xFF0C;&#x8BE5;&#x8868;&#x8BB0;&#x5F55;&#x8BC4;&#x8BBA;&#x4FE1;&#x606F;</p>
 <table>
 <thead>
 <tr>
@@ -583,7 +712,7 @@
 </tbody>
 </table>
 <p>&#x66F4;&#x6539;Change&#xFF1A;</p>
-<p>&#x66F4;&#x6539;&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x5BF9;&#x6587;&#x6863;&#x7684;&#x66F4;&#x6539;</p>
+<p>&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5BF9;&#x6587;&#x6863;&#x66F4;&#x6539;&#xFF0C;&#x8BE5;&#x8868;&#x8DDF;&#x8E2A;&#x66F4;&#x6539;&#x7684;&#x5177;&#x4F53;&#x6761;&#x76EE;&#x7684;&#x5177;&#x4F53;&#x5C5E;&#x6027;&#xFF0C;&#x4FDD;&#x5B58;&#x66F4;&#x6539;&#x4FE1;&#x606F;</p>
 <table>
 <thead>
 <tr>
@@ -601,8 +730,8 @@
 <td>&#x4E3B;&#x952E;</td>
 </tr>
 <tr>
-<td>DocID</td>
-<td>&#x6587;&#x6863;&#x7F16;&#x53F7;</td>
+<td>RequirementsPropertiesID</td>
+<td>&#x6761;&#x76EE;&#x5C5E;&#x6027;&#x7F16;&#x53F7;</td>
 <td>varchar(20)</td>
 <td>&#x5916;&#x952E;</td>
 </tr>
@@ -631,7 +760,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="&#x6570;&#x636E;&#x5E93;&#x521D;&#x59CB;&#x5316;&#x793A;&#x4F8B;">&#x6570;&#x636E;&#x5E93;&#x521D;&#x59CB;&#x5316;&#x793A;&#x4F8B;</h2>
 
                                 
                                 </section>
@@ -675,7 +803,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ER图和数据库表","level":"1.3.1","depth":2,"next":{"title":"数据库访问接口","level":"1.3.2","depth":2,"path":"数据库设计/数据库访问接口.md","ref":"数据库设计/数据库访问接口.md","articles":[]},"previous":{"title":"数据库设计","level":"1.3","depth":1,"path":"数据库设计/数据库设计.md","ref":"数据库设计/数据库设计.md","articles":[{"title":"ER图和数据库表","level":"1.3.1","depth":2,"path":"数据库设计/ER图和数据库表.md","ref":"数据库设计/ER图和数据库表.md","articles":[]},{"title":"数据库访问接口","level":"1.3.2","depth":2,"path":"数据库设计/数据库访问接口.md","ref":"数据库设计/数据库访问接口.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"数据库设计/ER图和数据库表.md","mtime":"2021-05-31T05:30:50.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-31T05:35:02.056Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ER图和数据库表","level":"1.3.1","depth":2,"next":{"title":"数据库访问接口","level":"1.3.2","depth":2,"path":"数据库设计/数据库访问接口.md","ref":"数据库设计/数据库访问接口.md","articles":[]},"previous":{"title":"数据库设计","level":"1.3","depth":1,"path":"数据库设计/数据库设计.md","ref":"数据库设计/数据库设计.md","articles":[{"title":"ER图和数据库表","level":"1.3.1","depth":2,"path":"数据库设计/ER图和数据库表.md","ref":"数据库设计/ER图和数据库表.md","articles":[]},{"title":"数据库访问接口","level":"1.3.2","depth":2,"path":"数据库设计/数据库访问接口.md","ref":"数据库设计/数据库访问接口.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"数据库设计/ER图和数据库表.md","mtime":"2021-05-31T07:57:32.132Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-31T08:01:56.507Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
